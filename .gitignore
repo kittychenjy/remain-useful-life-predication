@@ -1,0 +1,9 @@
+*.pyc
+.vscode
+__pycache__
+ans/*
+phm-ieee-2012-data-challenge-dataset-master/*
+XJTU-SY_Bearing_Datasets/*
+SCUT_dingzi/
+data/*
+

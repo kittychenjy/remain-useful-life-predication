@@ -21,7 +21,7 @@ def get_lab(all_data):
     all_kur=[]
     length=len(all_data)
     for data in all_data:
-        b=VibrationSignal(data)
+        b=VibrationSignal(data.swapaxes(0,1)[0])
         kur=b.get_kurtosis()
         all_kur.append(kur)
     fpt=get_fpt(all_kur)

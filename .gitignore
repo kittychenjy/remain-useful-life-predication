@@ -1,5 +1,7 @@
 *.pyc
 .vscode
+*.png
+*.npy
 __pycache__
 ans/*
 phm-ieee-2012-data-challenge-dataset-master/*

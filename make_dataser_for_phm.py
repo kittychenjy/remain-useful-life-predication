@@ -10,9 +10,9 @@ from FPT_selection import get_fpt,get_fpt0
 # for XJTU
 con_name= 'Learning_set'
 path='phm-ieee-2012-data-challenge-dataset-master/{}'.format(con_name)
-lable_path = 'phm/phm-lable/{}/'.format(con_name)
-npy_path = 'phm/phm-raw_data/{}/'.format(con_name)
-ans_path = 'phm/ans/'
+lable_path = 'phm0/phm-lable/{}/'.format(con_name)
+npy_path = 'phm0/phm-raw_data/{}/'.format(con_name)
+ans_path = 'phm0/ans/'
 
 
 def show(all_rms, all_kur, fpt,name):
@@ -43,7 +43,7 @@ def get_lab(all_data,name):
         rms=b.get_rms()
         all_kur.append(kur)
         all_rms.append(rms)
-    fpt=get_fpt0(np.array(all_kur))
+    fpt=get_fpt(np.array(all_kur))
     show(all_rms,all_kur,fpt,name)
     lable=np.ones(length)
     life=length-fpt
@@ -64,11 +64,11 @@ for filename in os.listdir(path):
         all_data.append(data)
     all_data = np.array(all_data)
     all_lab = get_lab(all_data,name=filename)
-    try:
-        np.save(npy_path + filename + '_data.npy', all_data)
-        np.save(lable_path + filename + '_lable.npy', all_lab)
-    except:
-        os.makedirs(npy_path)
-        os.makedirs(lable_path)
-        np.save(npy_path + filename + 'data.npy', all_data)
-        np.save(lable_path + filename + 'lable.npy', all_lab)
+    # try:
+    #     np.save(npy_path + filename + '_data.npy', all_data)
+    #     np.save(lable_path + filename + '_lable.npy', all_lab)
+    # except:
+    #     os.makedirs(npy_path)
+    #     os.makedirs(lable_path)
+    #     np.save(npy_path + filename + 'data.npy', all_data)
+    #     np.save(lable_path + filename + 'lable.npy', all_lab)

@@ -58,7 +58,7 @@ def get_fpt0(seq_kurtosis):
             mean = t_seq.mean()
             std = t_seq.std()
             for j in range(l + 1):
-                if seq_kurtosis[i - j] > (mean + 3 * std):
+                if seq_kurtosis[i - j] > (mean + 2 * std):
                     flag=flag+1
             if j+1 == flag :
                 fpt=i
